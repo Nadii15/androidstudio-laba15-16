@@ -1,0 +1,13 @@
+package com.ryckluk.androidstudio_laba15_16.navigation
+
+sealed class Screen(val route: String) {
+    object Home : Screen("home")
+
+    object Details : Screen("details/{subjectId}") {
+        fun createRoute(subjectId: String) = "details/$subjectId"
+    }
+
+    object Profile : Screen("profile")
+
+    object Settings : Screen("settings")
+}
